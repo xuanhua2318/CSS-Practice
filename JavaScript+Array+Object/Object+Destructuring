@@ -10,7 +10,7 @@ const age = member.age;
 const city = member.city;
 
 // WITH DESTRUCTURING (extract multiple properties at once)
-const {name: name_1, age: age_1, city: city_1} = member 
+const {name: name_1, age: age_1, city: city_1} = member // imagine : as -> name -> name_1
 // if there was no lines of code above, this would be short const {name, age, city} = element to match variable with key name 
 
 console.log(name);
