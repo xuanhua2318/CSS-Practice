@@ -1,0 +1,47 @@
+const member = {
+    name: "Susan",
+    age: 30,
+    city: "Boston",
+}
+
+// WITHOUT DESTRUCTURING assigning variable from the object key-value takes lots of time
+const name = member.name;
+const age = member.age;
+const city = member.city;
+
+// WITH DESTRUCTURING (extract multiple properties at once)
+const {name: name_1, age: age_1, city: city_1} = member 
+// if there was no lines of code above, this would be short const {name, age, city} = element to match variable with key name 
+
+console.log(name);
+console.log(age);
+console.log(city);
+
+console.log(name_1);
+console.log(age_1);
+console.log(city_1);
+// both of them will producte the same result, but the latter can save lots of time for dev
+
+// IN FUNCTION PARAMETERS WITHOUT DESTRUCTURING
+const where_live_1 = (member) => {
+    console.log(`No Destructuring: ${member.name} lives in ${member.city}`);
+};
+
+where_live_1 (member);
+
+// IN FUNCTION PARAMETERS WITH DESTRUCTURING
+const greetPerson = ({name, age}) => {
+    console.log (`${name} is ${age} years old`);
+};
+console.log (`With desturing:`);
+greetPerson (member);
+
+const live_where = ({name, city}) => {
+    console.log (`${name} lives in ${city}`);
+};
+live_where (member);
+
+// WITH DEFAULT VALUE
+const {name: name_2, age: age_2, city: city_2, country = "USA"} = member;
+// because member does not have country key, so we need to fill it as default value
+console.log (country);
